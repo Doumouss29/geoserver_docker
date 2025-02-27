@@ -1,6 +1,13 @@
 FROM tomcat:9.0.99-jdk17-temurin-jammy@sha256:ed4b0284e8a9ba3645b367d16a862cfa96baa566a44c1a8ee0a3d7ce00fbf32a
 LABEL vendor="osgeo.org"
 
+# Expose port 8080
+EXPOSE 8080
+
+# Set Java and Tomcat options
+ENV JAVA_OPTS="-Xms256m -Xmx1g"
+ENV CATALINA_OPTS="-Djava.awt.headless=true -Dcatalina.connector.address=0.0.0.0"
+
 # Build arguments
 ARG ADDITIONAL_FONTS_PATH=./additional_fonts/
 ARG ADDITIONAL_LIBS_PATH=./additional_libs/
