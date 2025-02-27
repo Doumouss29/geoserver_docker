@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "Welcome to GeoServer $GEOSERVER_VERSION"
+echo "Tomcat va écouter sur le port : ${PORT}"
 
 # function that can be used to copy a custom config file to the catalina conf dir
 function copy_custom_config() {
